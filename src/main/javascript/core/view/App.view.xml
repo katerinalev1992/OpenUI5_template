@@ -1,0 +1,7 @@
+<mvc:View
+	controllerName="com.openUI5_template.core.controller.App"
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<App id="idAppControl"/>
+</mvc:View>

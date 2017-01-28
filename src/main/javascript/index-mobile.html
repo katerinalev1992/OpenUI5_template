@@ -1,0 +1,51 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenUI5 template</title>
+    <script type="text/javascript" src="cordova.js"></script>
+</head>
+
+<body class="sapUiBody" id="content">
+
+<script
+        id="sap-ui-bootstrap"
+        data-sap-ui-theme="sap_belize"
+        src="resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.m,sap.ui.layout,sap.ui.unified"
+        data-sap-ui-bindingSyntax="complex"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-preload="async"
+        data-sap-ui-resourceroots='{"com.openUI5_template": "./"}'>
+</script>
+
+<script>
+    var app = {
+        initialize: function () {
+            this.bindEvents();
+        },
+        bindEvents: function () {
+            document.addEventListener('deviceready', this.onDeviceReady, false);
+        },
+        onDeviceReady: function () {
+            sap.ui.getCore().attachInit(function () {
+                new sap.m.Shell({
+                    app: sap.ui.core.ComponentContainer({
+                        name: "com.openUI5_template"
+                    })
+                }).placeAt("content");
+            });
+        }
+    };
+
+    app.initialize();
+
+</script>
+
+</body>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</html>

@@ -1,0 +1,110 @@
+<mvc:View controllerName="com.openUI5_template.function.client.controller.Main"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:tnt="sap.tnt"
+          xmlns:l="sap.ui.layout"
+          height="100%"
+          width="100%"
+          type="XML">
+    <Page showHeader="true"
+          backgroundDesign="Transparent"
+          enableScrolling="false"
+          floatingFooter="false"
+          visible="true" class="BG">
+        <headerContent>
+            <FlexBox alignContent="Center"
+                     justifyContent="SpaceBetween"
+                     visible="true"
+                     alignItems="Center">
+                <items>
+                    <Button icon="sap-icon://menu2"
+                            press="onCollapseExapandPress"/>
+                    <Label text="Login"/>
+                    <Image src="sources/logo2.png" visible="true" width="25pt" class="sapUiTinyMarginTop"/>
+                </items>
+            </FlexBox>
+        </headerContent>
+        <content>
+            <!--<Button text="Authintificate" press="authintificate"/>-->
+
+            <ScrollContainer horizontal="false" vertical="true" visible="true" height="100%" focusable="true">
+                <FlexBox justifyContent="SpaceBetween" alignItems="Start" fitContainer="true">
+                    <tnt:NavigationList id="navigationList" width="300px" expanded="false">
+                        <tnt:NavigationListItem
+                                text="Users"
+                                icon="sap-icon://employee">
+                            <tnt:NavigationListItem text="Sub Item 1">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 2">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 3">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 4">
+                            </tnt:NavigationListItem>
+                        </tnt:NavigationListItem>
+                        <tnt:NavigationListItem
+                                text="Groups"
+                                icon="sap-icon://building">
+                            <tnt:NavigationListItem text="Sub Item 1">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 2">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 3">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 4">
+                            </tnt:NavigationListItem>
+                        </tnt:NavigationListItem>
+                        <tnt:NavigationListItem text="Settings"
+                                                icon="sap-icon://settings">
+                            <tnt:NavigationListItem text="Sub Item 1">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 2">
+                            </tnt:NavigationListItem>
+                        </tnt:NavigationListItem>
+                        <tnt:NavigationListItem text="Actions"
+                                                icon="sap-icon://action">
+                            <tnt:NavigationListItem text="Sub Item 1">
+                            </tnt:NavigationListItem>
+                            <tnt:NavigationListItem text="Sub Item 2">
+                            </tnt:NavigationListItem>
+                        </tnt:NavigationListItem>
+                    </tnt:NavigationList>
+                    <l:VerticalLayout
+                            class="sapUiContentPadding"
+                            width="100%">
+                        <l:content>
+                            <List items="{/EntryCollection}" width="1000px" id="messageList">
+                                <FeedListItem
+                                        sender="{Author}"
+                                        icon="{AuthorPicUrl}"
+                                        senderPress="onPress"
+                                        iconPress="onPress"
+                                        iconDensityAware="false"
+                                        info="{Type}"
+                                        timestamp="{Date}"
+                                        text="{Text}"/>
+                            </List>
+                        </l:content>
+                    </l:VerticalLayout>
+
+                </FlexBox>
+            </ScrollContainer>
+
+
+        </content>
+        <footer>
+            <OverflowToolbar id="otbFooter" height="60px" class="footerStyle">
+                <Button icon="sap-icon://attachment" visible="true" enabled="true" width="5%"
+                        press="handleFileUploaderPopoverPress"/>
+                <VBox width="85%">
+                    <FeedInput
+                            post="onPost" showIcon="false"
+                            class="sapUiSmallMarginTopBottom"/>
+                </VBox>
+
+                <Button icon="sap-icon://theater" visible="true" enabled="true" width="5%" press="handlePopoverPress"/>
+
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

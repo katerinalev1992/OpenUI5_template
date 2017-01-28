@@ -1,0 +1,117 @@
+{
+  "_version": "0.0.1",
+  "sap.app": {
+    "_version": "0.0.1",
+    "id": "com.openUI5_template",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "0.0.1"
+    }
+  },
+  "sap.ui": {
+    "_version": "0.0.1",
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_belize"
+    ]
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "rootView": "com.openUI5_template.core.view.App",
+    "dependencies": {
+      "minUI5Version": "1.40.10",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.openUI5_template.i18n.i18n"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "controlId": "idAppControl",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "login",
+          "target": "login"
+        },
+        {
+          "pattern": "main",
+          "name": "main",
+          "target": "main"
+        },
+        {
+          "pattern": "nav",
+          "name": "nav",
+          "target": "nav"
+        },
+        {
+          "pattern": "second",
+          "name": "second",
+          "target": "second"
+        }
+      ],
+      "targets": {
+        "main": {
+          "viewName": "com.openUI5_template.function.client.view.Main",
+          "viewLevel": 1
+        },
+        "login": {
+          "viewName": "com.openUI5_template.function.client.view.Login",
+          "viewLevel": 1
+        },
+        "nav": {
+          "viewName": "com.openUI5_template.function.client.view.NavPage",
+          "viewLevel": 1
+        },
+        "second": {
+          "viewName": "com.openUI5_template.function.client.view.SecondView",
+          "viewLevel": 1
+        },
+        "notFound": {
+          "viewName": "com.openUI5_template.core.view.NotFound"
+        }
+      }
+    },
+    "extends": {
+      "component": "com.openUI5_template.Component",
+      "extensions": {}
+    }
+  }
+}

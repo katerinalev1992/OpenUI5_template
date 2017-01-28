@@ -1,0 +1,63 @@
+<mvc:View controllerName="com.openUI5_template.function.client.controller.Login"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:form="sap.ui.layout.form"
+          height="100%"
+          width="100%"
+          type="XML">
+    <Page showHeader="true"
+          backgroundDesign="Transparent"
+          enableScrolling="false"
+          floatingFooter="false"
+          visible="true" class="BG">
+        <headerContent>
+            <FlexBox alignContent="Center"
+                     justifyContent="SpaceBetween"
+                     visible="true"
+                     alignItems="Center">
+                <items>
+                    <Button icon="sap-icon://menu2"
+                            press="onCollapseExapandPress" visible="false"/>
+                    <Label text="Demo" id="titleLabel"/>
+                    <Image src="sources/logo2.png" visible="true" width="25pt" class="sapUiTinyMarginTop"/>
+                </items>
+            </FlexBox>
+        </headerContent>
+        <content>
+            <VBox alignItems="Center" width="100%" class="sapUiLargeMarginTop">
+                <form:SimpleForm maxContainerCols="3" layout="ResponsiveLayout" id="loginForm2" visible="false"/>
+                <form:SimpleForm maxContainerCols="3" layout="ResponsiveLayout" id="loginForm">
+                    <form:content>
+                        <VBox>
+                            <HBox>
+                                <Button icon="sap-icon://employee" enabled="false"/>
+                                <Input id="username" type="Text" placeholder="{i18n>authUsernameHint}" width="260px"/>
+                            </HBox>
+                            <HBox>
+                                <Button icon="sap-icon://locked" enabled="false"/>
+                                <Input id="password" type="Password" placeholder="{i18n>authPasswordHint}"
+                                       width="260px"/>
+                            </HBox>
+
+                            <HBox>
+                                <Button icon="sap-icon://world" enabled="false"/>
+                                <Input type="Number" placeholder="Input number" width="260px"/>
+                            </HBox>
+
+                            <HBox alignItems="Center" class="sapUiTinyMarginTop">
+                                <Button id="loginBtn" text="Login" press="onLoginPress" width="300px"
+                                        height="100px"
+                                        class="sapMBtnContentAuth"/>
+                            </HBox>
+
+                            <Link
+                                    class="sapUiLargeMarginTop"
+                                    text="Forgot your password?"
+                                    press="onForgottenPasswordLinkPressed"/>
+                        </VBox>
+                    </form:content>
+                </form:SimpleForm>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
